@@ -1,0 +1,17 @@
+server:
+    port: 9000
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/authorization-server
+        username: sa
+        password: password
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+    level:
+        org.springframework.security: trace
