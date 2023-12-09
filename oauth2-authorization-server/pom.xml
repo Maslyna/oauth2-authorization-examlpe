@@ -16,6 +16,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.30</lombok.version>
+        <hypersistence.utils.version>3.6.1</hypersistence.utils.version>
     </properties>
 
     <dependencies>
@@ -30,6 +31,11 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.hypersistence</groupId>
+            <artifactId>hypersistence-utils-hibernate-60</artifactId>
+            <version>${hypersistence.utils.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

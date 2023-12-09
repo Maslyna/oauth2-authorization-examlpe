@@ -1,10 +1,10 @@
 package net.maslyna.authorization.server.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import io.hypersistence.utils.hibernate.type.basic.PostgreSQLEnumType;
+import jakarta.persistence.*;
 import lombok.*;
 import net.maslyna.authorization.server.model.Role;
+import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -21,10 +21,13 @@ import java.util.UUID;
 @Table(name = "t_users")
 public class User implements UserDetails {
     @Id
+    @Column(name = "user_id")
     private UUID id;
     private String username;
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "user_role")
     private Role role;
 
     @Builder.Default
